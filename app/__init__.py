@@ -10,10 +10,8 @@ def create_app(config_class=Config):
 
     db.init_app(app)
 
-    @app.route('/')
-    def index():
-        with db.engine.connect():
-            print('funcionando')
-        return 'Corriendo flask'
+    from app.routes.main.inicio import inicio
+
+    app.register_blueprint(inicio)
 
     return app
