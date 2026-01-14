@@ -11,7 +11,3 @@ class Celular(db.Model):
     def __repr__(self):
         return f'<datos {self.id} {self.marca} {self.modelo} {self.anio}>'
     
-    def __init__(self, marca, modelo, anio):
-        self.marca = marca
-        self.modelo = modelo
-        self.anio = anio
