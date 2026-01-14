@@ -6,6 +6,9 @@
     <title>Inicio</title>
   </head>
   <body>
+    <div>
+      <a href="{{url_for('others.agregar')}}">Agregar</a>
+    </div>
     <table>
       <thead>
         <tr>
@@ -21,7 +24,7 @@
           <td>{{ celular.id }}</td>
           <td>{{ celular.marca }}</td>
           <td>{{ celular.modelo }}</td>
-          <td>{{ celular.precio }}</td>
+          <td>{{ celular.anio }}</td>
         </tr>
         {% else %}
         <tr>

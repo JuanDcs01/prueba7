@@ -11,7 +11,9 @@ def create_app(config_class=Config):
     db.init_app(app)
 
     from app.routes.main.inicio import inicio
+    from app.routes.others.others import others
 
     app.register_blueprint(inicio)
+    app.register_blueprint(others)
 
     return app
