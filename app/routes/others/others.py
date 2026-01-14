@@ -28,6 +28,18 @@ def eliminar(id):
     db.session.commit()
     return redirect(url_for('inicio.index'))
 
-# @others.route()
-# def ():
-#     return
+@others.route('/editar/<int:id>', methods=['POST', 'GET'])
+def editar(id):
+
+    celular = Celular.query.get_or_404(id)
+
+    if request.method == 'POST':
+        celular.marca = request.form['marca']
+        celular.modelo = request.form['modelo']
+        celular.anio = request.form['anio']
+
+        db.session.commit()
+        return redirect(url_for('inicio.index'))
+
+
+    return render_template('editar.html', celular=celular)

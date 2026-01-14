@@ -27,6 +27,7 @@
           <td>{{ celular.modelo }}</td>
           <td>{{ celular.anio }}</td>
           <td>
+            <a href="{{url_for('others.editar', id=celular.id)}}">Editar</a>
             <a href="{{url_for('others.eliminar', id=celular.id)}}">Eliminar</a>
           </td>
         </tr>
