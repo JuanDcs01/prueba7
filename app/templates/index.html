@@ -16,6 +16,7 @@
           <th>Marca</th>
           <th>Modelo</th>
           <th>Precio</th>
+          <th>Opciones</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +26,9 @@
           <td>{{ celular.marca }}</td>
           <td>{{ celular.modelo }}</td>
           <td>{{ celular.anio }}</td>
+          <td>
+            <a href="{{url_for('others.eliminar', id=celular.id)}}">Eliminar</a>
+          </td>
         </tr>
         {% else %}
         <tr>

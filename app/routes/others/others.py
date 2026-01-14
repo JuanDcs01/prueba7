@@ -21,6 +21,13 @@ def guardar():
 
     return redirect(url_for('inicio.index'))
 
+@others.route('/eliminar/<int:id>')
+def eliminar(id):
+    celular = Celular.query.get_or_404(id)
+    db.session.delete(celular)
+    db.session.commit()
+    return redirect(url_for('inicio.index'))
+
 # @others.route()
 # def ():
 #     return
