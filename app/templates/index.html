@@ -6,6 +6,29 @@
     <title>Inicio</title>
   </head>
   <body>
-    <h1>La ruta esta funcionando</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for celular in celulares %}
+        <tr>
+          <td>{{ celular.id }}</td>
+          <td>{{ celular.marca }}</td>
+          <td>{{ celular.modelo }}</td>
+          <td>{{ celular.precio }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="3">No hay celulares disponibles.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </body>
 </html>
