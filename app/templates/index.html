@@ -29,13 +29,18 @@
       <tbody>
         {% for celular in celulares %}
         <tr>
-          <td>{{ celular.id }}</td>
-          <td>{{ celular.marca }}</td>
+          <td>{{ celular.idcelular }}</td>
+          <td>{{ celular.marca_rel.nombre}}</td>
           <td>{{ celular.modelo }}</td>
-          <td>{{ celular.anio }}</td>
+          <td>{{ celular.año }}</td>
           <td>
-            <a href="{{url_for('others.editar', id=celular.id)}}">Editar</a>
-            <a href="{{url_for('others.eliminar', id=celular.id)}}">Eliminar</a>
+            <a href="{{url_for('others.editar', id=celular.idcelular)}}"
+              >Editar</a
+            >
+            <a href="{{url_for('others.eliminar', id=celular.idcelular)}}"
+              >Eliminar</a
+            >
+            <a href="{{url_for('others.info', id=celular.idcelular)}}">Info</a>
           </td>
         </tr>
         {% else %}

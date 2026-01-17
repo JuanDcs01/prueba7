@@ -12,9 +12,9 @@ def agregar():
 def guardar():
     marca = request.form['marca']
     modelo = request.form['modelo']
-    anio = request.form['anio']
+    año = request.form['año']
 
-    celular = Celular(marca=marca, modelo=modelo, anio=anio)
+    celular = Celular(marca=marca, modelo=modelo, año=año)
 
     db.session.add(celular)
     db.session.commit()
@@ -40,7 +40,7 @@ def editar(id):
     if request.method == 'POST':
         celular.marca = request.form['marca']
         celular.modelo = request.form['modelo']
-        celular.anio = request.form['anio']
+        celular.año = request.form['año']
 
         db.session.commit()
         flash("dispositivo editado")
@@ -48,3 +48,9 @@ def editar(id):
 
 
     return render_template('editar.html', celular=celular)
+
+@others.route('/info/<int:id>')
+def info(id):
+
+    celular = Celular.query.get_or_404(id)
+    return render_template('info.html', celular=celular)

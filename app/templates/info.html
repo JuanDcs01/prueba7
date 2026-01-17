@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div><h1>Detalles del celular</h1></div>
+    <ul>
+      <li><strong>Marca:</strong> {{ celular.marca_rel.nombre }}</li>
+      <li><strong>Pais:</strong> {{ celular.marca_rel.pais_origen }}</li>
+    </ul>
+    <ul>
+      <li><strong>Modelo:</strong> {{ celular.modelo }}</li>
+      <li><strong>Año:</strong> {{ celular.año }}</li>
+    </ul>
+    <ul>
+      <li><strong>IMEI:</strong> {{ celular.imei.numero_imei }}</li>
+    </ul>
+
+    <div><a href="{{url_for('inicio.index')}}">Volver</a></div>
+  </body>
+</html>

@@ -12,7 +12,7 @@
         type="text"
         name="marca"
         placeholder="Marca"
-        value="{{ celular.marca }}"
+        value="{{ celular.marca_rel.nombre }}"
       />
       <input
         type="text"
@@ -22,9 +22,9 @@
       />
       <input
         type="number"
-        name="anio"
+        name="año"
         placeholder="año"
-        value="{{ celular.anio }}"
+        value="{{ celular.año }}"
       />
       <input type="submit" value="Actualizar" />
     </form>
